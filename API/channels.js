@@ -26,6 +26,19 @@ app.get('/api/channels', (req, res) => {
   });
 });
 
+// Rota que retorna as categorias com a quantidade de canais
+app.get('/api/categorias', (req, res) => {
+  const counts = {};
+  for (const ch of channelsData) {
+    const cat = ch.category || ch.group_title || 'OUTROS';
+    counts[cat] = (counts[cat] || 0) + 1;
+  }
+  const categorias = Object.entries(counts)
+    .map(([nome, total]) => ({ nome, total }))
+    .sort((a, b) => a.nome.localeCompare(b.nome));
+  res.json({ total: categorias.length, categorias });
+});
+
 // Rota que retorna um canal pelo índice (index)
 app.get('/api/channels/:id', (req, res) => {
   const id = parseInt(req.params.id);
