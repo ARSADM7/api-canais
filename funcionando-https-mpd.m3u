@@ -1,0 +1,61 @@
+#EXTM3U
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/hd/discovery-channel-icon-hd-us.png" group-title="Documentaries 🌎",Discovery Channel (🔉💬🇬🇧)🇨🇿
+https://dash2.antik.sk/stream/hisi_discovery/playlist_cbcs.mpd
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/discovery-science-us.png" group-title="Documentaries 🌎",Discovery Science (🔉💬🇬🇧)🇮🇪
+https://d1g8wgjurz8via.cloudfront.net/bpk-tv/Discoveryscience2/default/manifest.mpd?wowzasessionid=@iprtlk
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/iprtl/p1/master/logo/hbo.png" group-title="Channels 🇨🇿🇮🇳🇵🇭",HBO (🔉💬🇬🇧)🇮🇳
+https://cdnjkt913.transvision.co.id:1000/live/master/3/4028c6856b6088c3016b87d64b970b53/manifest.mpd
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/hbo-family-us.png" group-title="Channels 🇨🇿🇮🇳🇵🇭",HBO Family (🔉💬🇬🇧)🇮🇳
+https://cdnjkt913.transvision.co.id:1000/live/master/4/4028c6856c3db2cc016d055927fe37a4/manifest.mpd
+#EXTINF:-1 tvg-logo="https://m.media-amazon.com/images/G/01/digital/video/Linear_Clean_Slate/hbo_signature._SL170_FMpng_.png" group-title="Channels 🇨🇿🇮🇳🇵🇭",HBO Signature (🔉💬🇬🇧)🇮🇳
+https://cdnjkt913.transvision.co.id:1000/live/master/3/4028c6856c3db2cc016d0552e0ca37a2/manifest.mpd
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/iprtl/p1/master/logo/Cinemax.webp" group-title="Channels 🇨🇿🇮🇳🇵🇭",Cinemax (🔉💬🇬🇧)🇮🇳
+https://cdnjkt913.transvision.co.id:1000/live/master/1/4028c6856c3db2cc016cdbfc4a1934bf/manifest.mpd
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/iprtl/p1/master/logo/Cinemax.webp" group-title="Channels 🇨🇿🇮🇳🇵🇭",Cinemax (🔉💬🇬🇧) 🇨🇿
+https://dash2.antik.sk/stream/hisi_cinemax/playlist_cbcs.mpd
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/iprtl/p1/master/logo/TLC.webp" group-title="Channels 🇨🇿🇮🇳🇵🇭",TLC (🔉💬🇬🇧)🇮🇳
+https://d1g8wgjurz8via.cloudfront.net/bpk-tv/Tlc2/default/manifest.mpd?wowzasessionid=@iprtlk
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/iprtl/p1/master/logo/Crime+Investigation.png" group-title="Documentaries 🌎",Crime & Investigation (🔉💬🇬🇧)🇨🇿
+https://dash2.antik.sk/stream/hisi_crime_and_invest/playlist_cbcs.mpd
+#EXTINF:-1 tvg-logo="https://m.media-amazon.com/images/G/01/LCXO_Station_Logos/13._SL170_FMpng_.png" group-title="Documentaries 🌎",PBS Genealogy 🇺🇸
+https://otte.live.fly.ww.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/3qnbo1nztd/out/v1/2d032a09cb444d2b9fab58faf40db397/cenc.mpd?encoding=segmentBase
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/iprtl/p1/master/logo/bbcnews.png" group-title="World News 🌍",BBC News 🇺🇸
+https://vs-cmaf-push-ww-live.akamaized.net/x=4/i=urn:bbc:pips:service:bbc_news_channel_hd/iptv_hd_abr_v1.mpd?wowzasessionid=@iprtlk
+#EXTINF:-1 tvg-logo="https://logo.m3uassets.com/axnwhite.png" group-title="Channels 🇨🇿🇮🇳🇵🇭",AXN White (🔉💬🇬🇧)🇨🇿
+https://dash2.antik.sk/stream/hisi_axn_white/playlist_cbcs.mpd
+#EXTINF:-1 tvg-logo="https://logo.m3uassets.com/axnblack.png" group-title="Channels 🇨🇿🇮🇳🇵🇭",AXN Black (🔉💬🇬🇧)🇨🇿
+https://dash2.antik.sk/stream/hisi_axn_black/playlist_cbcs.mpd
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/iprtl/p1/master/logo/hbohits.png" group-title="Channels 🇨🇿🇮🇳🇵🇭",HBO Hits (🔉💬🇬🇧)
+https://cdnjkt913.transvision.co.id:1000/live/master/4/4028c6856c3db2cc016d054fbf67379f/manifest.mpd
+#EXTINF:-1 tvg-logo="https://logo.m3uassets.com/cinemax2.png" group-title="Channels 🇨🇿🇮🇳🇵🇭",Cinemax 2 (🔉💬🇬🇧)🇨🇿
+https://dash2.antik.sk/stream/hisi_cinemax_2/playlist_cbcs.mpd
+#EXTINF:-1 tvg-logo="https://logo.m3uassets.com/mnplus.png" group-title="Channels 🇨🇿🇮🇳🇵🇭",MN+ (🔉💬🇬🇧)🇮🇳
+https://times-ott-live.akamaized.net/mnplus_wv_drm/index.mpd
+#EXTINF:-1 tvg-logo="https://logo.m3uassets.com/mnx.png" group-title="Channels 🇨🇿🇮🇳🇵🇭",MNX (🔉💬🇬🇧)🇮🇳
+https://times-ott-live.akamaized.net/mnxhd_wv_drm/index.mpd
+#EXTINF:-1 tvg-logo="https://logo.m3uassets.com/moviesnow.png" group-title="Channels 🇨🇿🇮🇳🇵🇭",Movies Now (🔉💬🇬🇧)🇮🇳
+https://times-ott-live.akamaized.net/moviesnow_wv_drm/index.mpd
+#EXTINF:-1 tvg-logo="https://m.media-amazon.com/images/G/01/LCXO_Station_Logos/PBS_Travel_Logo_Stacked_White1.png" group-title="Documentaries 🌎",PBS Travel 🇺🇸
+https://otte.live.fly.ww.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/mxbsynqple/out/v1/5d9a60deddcd460d8eb8d685dfe5e148/cenc.mpd?encoding=segmentBase
+#EXTINF:-1 tvg-logo="https://m.media-amazon.com/images/G/01/LCXO_Station_Logos/11.png" group-title="Documentaries 🌎",PBS Nature 🇺🇸
+https://otte.live.fly.ww.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/qi23sqygqv/out/v1/cb1c6fe397164335b456dd8a33cb821b/cenc.mpd?encoding=segmentBase
+#EXTINF:-1 tvg-logo="https://m.media-amazon.com/images/G/01/LCXO_Station_Logos/PBS_Documentaries_Logo_Stacked_White2.png" group-title="Documentaries 🌎",PBS Documentaries 🇺🇸
+https://otte.live.fly.ww.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/5kgj4foeaa/out/v1/aac8e6bb3b924bdf896032592ada5a3c/cenc.mpd?encoding=segmentBase
+#EXTINF:-1 tvg-logo="https://m.media-amazon.com/images/G/01/LCXO_Station_Logos/PBS_Ken_Burns_Logo_Stacked_White1._SL170_FMpng_.png" group-title="Documentaries 🌎",PBS Ken Burns
+https://otte.live.fly.ww.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/zaf7e2tnmr/out/v1/94ef3b285f51419791b3b435ce449255/cenc.mpd?encoding=segmentBase
+#EXTINF:-1 tvg-logo="https://m.media-amazon.com/images/G/01/LCXO_Station_Logos/Sharks_Logo_White_16x9.png" group-title="Documentaries 🌎",Nat Geo Sharks 🇺🇸
+https://otte.live.fly.ww.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/c9sshqw4lf/out/v1/6173f88d0c4e440bb3071a1e89d3a541/cenc.mpd?encoding=segmentBase
+#EXTINF:-1 tvg-logo="https://logo.m3uassets.com/la7d.png" group-title="Channels 🇮🇹",La7d 🇮🇹
+https://d15umi5iaezxgx.cloudfront.net/LA7D/DRM/DASH/Live.mpd
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/iprtl/p1/master/logo/SPORT2_CZ.webp" group-title="All Sports 🌎",Sport 2 🇨🇿⚽️🎾🃏
+https://dash2.antik.sk/stream/nvidia_sport2/playlist_cenc.mpd
+#EXTINF:-1 tvg-logo="https://github.com/iprtl/p1/raw/master/logo/ArenaSport1.png" group-title="All Sports 🌎",Arena Sport 1 🇨🇿 🏍🏎️
+https://dash2.antik.sk/stream/hisi_arena_sport1/playlist_cbcs.mpd
+#EXTINF:-1 tvg-logo="https://github.com/iprtl/p1/raw/master/logo/ArenaSport2.png" group-title="All Sports 🌎",Arena Sport 2 🇨🇿 🏍🏎️
+https://dash2.antik.sk/stream/hisi_as2/playlist_cbcs.mpd
+#EXTINF:-1 tvg-logo="https://logo.m3uassets.com/novasport1.png" group-title="All Sports 🌎",Nova Sport 1 🇸🇰
+https://dash2.antik.sk/stream/nvidia_nova_sport1/playlist_cenc.mpd
+#EXTINF:-1 tvg-logo="https://logo.m3uassets.com/novasport2.png" group-title="All Sports 🌎",Nova Sport 2 🇸🇰
+https://dash2.antik.sk/stream/nvidia_nova_sport2/playlist_cenc.mpd
+#EXTINF:-1 tvg-logo="https://logo.m3uassets.com/spotv.png" group-title="All Sports 🌎",Spotv 🇮🇳 🏍🏎️
+https://qp-pldt-live-grp-11-prod.akamaized.net/out/u/dr_spotvhd.mpd

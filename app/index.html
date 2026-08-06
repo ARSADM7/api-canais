@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ARSADM TV</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: system-ui, -apple-system, sans-serif; background: #0f1220; color: #e8eaf0; overflow: hidden; }
+  header { height: 56px; background: #131730; display: flex; align-items: center; justify-content: space-between; padding: 0 16px; border-bottom: 1px solid #262b42; }
+  h1 { font-size: 18px; } h1 span { color: #7aa2ff; }
+  #busca { width: 300px; padding: 8px 12px; border-radius: 8px; border: 1px solid #2a2f45; background: #171b2e; color: #e8eaf0; font-size: 14px; outline: none; }
+  #busca:focus { border-color: #7aa2ff; }
+  .layout { display: flex; height: calc(100vh - 56px); }
+  #lista { flex: 1; overflow-y: auto; padding: 14px; }
+  .group { margin-bottom: 20px; }
+  .group h2 { font-size: 14px; margin-bottom: 8px; color: #ffd479; text-transform: uppercase; letter-spacing: .5px; }
+  .group h2 .count { color: #6b7280; font-size: 12px; margin-left: 6px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 8px; }
+  .card { display: flex; align-items: center; gap: 10px; background: #171b2e; border: 1px solid #262b42; border-radius: 8px; padding: 8px 10px; cursor: pointer; transition: .15s; }
+  .card:hover { border-color: #7aa2ff; background: #1d2340; }
+  .card.ativo { border-color: #ffd479; }
+  .logo { width: 32px; height: 32px; object-fit: contain; border-radius: 4px; background: #0f1220; flex-shrink: 0; }
+  .name { font-size: 12px; line-height: 1.25; flex: 1; }
+  .player-box { width: 100%; height: calc(100vh - 56px); background: #000; position: relative; }
+  video { width: 100%; height: 100%; display: block; background: #000; }
+  .player-fechar { position: absolute; top: 10px; right: 10px; z-index: 5; background: #000a; color: #fff; border: 1px solid #2a2f45; border-radius: 6px; padding: 6px 12px; cursor: pointer; }
+  .player-fechar:hover { border-color: #ff5f5f; color: #ff5f5f; }
+  .sem-resultado { color: #9aa0b0; padding: 30px 0; text-align: center; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>ARSADM <span>TV</span></h1>
+  <input id="busca" type="search" placeholder="Buscar canal...">
+</header>
+
+<div class="layout">
+  <div id="lista">Carregando canais...</div>
+  <div class="player-box" id="player-box" style="display:none;">
+    <button class="player-fechar" id="fechar">Fechar</button>
+    <video id="video" controls autoplay playsinline></video>
+  </div>
+</div>
+
+<script>
+  const API = 'https://api-canais-opal.vercel.app/';
+  let todos = [];
+  let atual = null;
+
+  async function carregar() {
+    try {
+      const r = await fetch(API);
+      todos = await r.json();
+      renderizar(todos);
+    } catch (e) {
+      document.getElementById('lista').innerHTML = 'Erro ao carregar: ' + e.message;
+    }
+  }
+
+  function renderizar(lista) {
+    const grupos = {};
+    for (const ch of lista) {
+      const cat = ch.category || ch.group_title || 'OUTROS';
+      if (!grupos[cat]) grupos[cat] = [];
+      grupos[cat].push(ch);
+    }
+
+    const main = document.getElementById('lista');
+    main.innerHTML = Object.keys(grupos).sort().map(cat => `
+      <section class="group" data-cat="${esc(cat).toUpperCase()}">
+        <h2>${esc(cat)} <span class="count">${grupos[cat].length}</span></h2>
+        <div class="grid">
+          ${grupos[cat].map(ch => `
+            <div class="card" data-id="${ch.index}">
+              <img class="logo" src="${esc(ch.tvg_logo || '')}" alt="" onerror="this.style.display='none'">
+              <span class="name">${esc(ch.display_name || ch.tvg_name)}</span>
+            </div>`).join('')}
+        </div>
+      </section>`).join('');
+
+    main.querySelectorAll('.card').forEach(card => {
+      card.addEventListener('click', () => {
+        const ch = todos.find(c => c.index === Number(card.dataset.id));
+        if (ch) abrirPlayer(ch);
+      });
+    });
+  }
+
+  function esc(s) {
+    return String(s || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  }
+
+  function abrirPlayer(ch) {
+    document.querySelectorAll('.card').forEach(c => c.classList.remove('ativo'));
+    const card = document.querySelector(`.card[data-id="${ch.index}"]`);
+    if (card) card.classList.add('ativo');
+
+    atual = ch;
+    document.getElementById('player-box').style.display = 'block';
+    document.getElementById('lista').style.width = '320px';
+    document.getElementById('lista').style.flex = 'none';
+    document.title = ch.display_name || ch.tvg_name;
+
+    const video = document.getElementById('video');
+    video.src = ch.url;
+    video.play().catch(() => {});
+  }
+
+  document.getElementById('fechar').addEventListener('click', () => {
+    const video = document.getElementById('video');
+    video.pause();
+    video.removeAttribute('src');
+    video.load();
+    document.getElementById('player-box').style.display = 'none';
+    document.getElementById('lista').style.width = '';
+    document.getElementById('lista').style.flex = '';
+    document.title = 'ARSADM TV';
+    atual = null;
+  });
+
+  document.getElementById('busca').addEventListener('input', () => {
+    const q = document.getElementById('busca').value.trim().toUpperCase();
+    const groups = document.querySelectorAll('.group');
+    let visiveis = 0;
+    for (const g of groups) {
+      let count = 0;
+      for (const card of g.querySelectorAll('.card')) {
+        const match = !q || card.textContent.toUpperCase().includes(q) || g.dataset.cat.includes(q);
+        card.style.display = match ? '' : 'none';
+        if (match) count++;
+      }
+      g.style.display = count ? '' : 'none';
+      g.querySelector('.count').textContent = count;
+      visiveis += count;
+    }
+  });
+
+  carregar();
+</script>
+</body>
+</html>

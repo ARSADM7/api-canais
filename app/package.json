@@ -1,0 +1,16 @@
+{
+  "name": "arsadmtv-app",
+  "version": "1.0.0",
+  "description": "App de canais ARSADM TV",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-packager . ARSADM-TV --platform=win32 --arch=x64 --out=dist --overwrite"
+  },
+  "author": "ARSADM",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^31.7.7",
+    "electron-packager": "^17.1.2"
+  }
+}

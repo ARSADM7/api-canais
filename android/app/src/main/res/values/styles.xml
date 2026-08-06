@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.CineStream" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <item name="colorPrimary">#00F0FF</item>
+        <item name="colorPrimaryDark">#060813</item>
+        <item name="colorAccent">#7000FF</item>
+        <item name="android:windowBackground">#060813</item>
+        <item name="android:statusBarColor">#060813</item>
+        <item name="android:navigationBarColor">#060813</item>
+    </style>
+
+    <style name="Theme.CineStream.Player" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowBackground">#000000</item>
+        <item name="android:statusBarColor">#000000</item>
+        <item name="android:navigationBarColor">#000000</item>
+        <item name="windowFullscreen">true</item>
+    </style>
+</resources>

@@ -1,0 +1,21 @@
+{
+  "appId": "com.cinestream.neon",
+  "appName": "CineStream Neon",
+  "webDir": "www",
+  "server": {
+    "androidScheme": "http",
+    "cleartext": true
+  },
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 2000,
+      "backgroundColor": "#060813",
+      "showSpinner": true,
+      "spinnerColor": "#00f0ff"
+    },
+    "StatusBar": {
+      "style": "dark",
+      "backgroundColor": "#060813"
+    }
+  }
+}
