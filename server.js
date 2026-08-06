@@ -1,26 +1,25 @@
-const http = require('http');
-const fs = require('fs');
+const express = require('express');
 const path = require('path');
+const api = require('./api/channels');
 
-const mime = {
-    '.html': 'text/html',
-    '.js': 'text/javascript',
-    '.css': 'text/css',
-    '.json': 'application/json',
-    '.png': 'image/png',
-    '.svg': 'image/svg+xml'
-};
+const app = express();
+const ROOT = __dirname;
 
-http.createServer((req, res) => {
-    let f = req.url === '/' ? '/index.html' : req.url;
-    f = path.join(process.cwd(), f);
-    fs.readFile(f, (e, d) => {
-        if (e) {
-            res.writeHead(404);
-            res.end('404');
-        } else {
-            res.writeHead(200, { 'Content-Type': mime[path.extname(f)] || 'application/octet-stream' });
-            res.end(d);
-        }
-    });
-}).listen(8080, () => console.log('✓ http://localhost:8080'));
+app.use(express.json());
+
+// API de canais
+app.use(api);
+
+// Arquivos estáticos (player web)
+app.use(express.static(path.join(ROOT, 'www')));
+app.use(express.static(ROOT));
+
+// Fallback para o player
+app.use((req, res) => {
+  res.sendFile(path.join(ROOT, 'www', 'index.html'), (err) => {
+    if (err) res.status(404).send('404');
+  });
+});
+
+const port = process.env.PORT || 8080;
+app.listen(port, () => console.log(`✓ API em http://localhost:${port}`));

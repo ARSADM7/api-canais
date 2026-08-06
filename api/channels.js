@@ -2,11 +2,16 @@ const express = require('express');
 const cors = require('cors');
 const app = express();
 const channelsData = require('../data/channels.json');
+const httpsRouter = require('./https');
+
+// Permite qualquer site (incluindo localhost) ler a API
+app.use(cors());
 
 // Middleware para JSON
 app.use(express.json());
-// Habilita CORS para todas as rotas
-app.use(cors());
+
+// Rotas de canais HTTPS
+app.use('/api/https', httpsRouter);
 
 // Página inicial (lista completa de canais em JSON)
 app.get('/', (req, res) => {
