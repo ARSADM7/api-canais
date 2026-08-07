@@ -1,5 +1,0 @@
-#EXTM3U
-#EXTINF:-1 tvg-id="RTP.Notícias.HD.pt" tvg-logo="https://cdn-images.rtp.pt/common/img/channels/logos/gray-negative/horizontal/rtpnoticias_2026.png" group-title="News 🇵🇹🇧🇷",RTP Noticias_ 🇵🇹
-http://streaming-live.rtp.pt/liverepeater/rtpnHD.smil/manifest.mpd
-#EXTINF:-1 tvg-id="RTP.1.HD.pt" tvg-logo="https://cdn-images.rtp.pt/common/img/channels/logos/gray-negative/horizontal/rtp1_2026.png" group-title="Portugal 🇵🇹",RTP1 🇵🇹
-http://streaming-live-app.rtp.pt/liverepeater/rtpClean1HD.smil/manifest.mpd

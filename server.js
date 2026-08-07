@@ -14,6 +14,11 @@ app.use(api);
 app.use(express.static(path.join(ROOT, 'www')));
 app.use(express.static(ROOT));
 
+// 404 JSON para rotas de API desconhecidas
+app.use('/api', (req, res) => {
+  res.status(404).json({ error: 'Rota não encontrada' });
+});
+
 // Fallback para o player
 app.use((req, res) => {
   res.sendFile(path.join(ROOT, 'www', 'index.html'), (err) => {
